@@ -3,7 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Webpack Configuration</title>
+    <title>Expense Tracker</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>Expense Tracker</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>YOUR BALANCE</h2>
+        <h2>$12,000</h2>
+      </section>
+
+      <section>
+        <div>
+          <h3>Income</h3>
+          <span>$12,000</span>
+        </div>
+        <div>
+          <h3>Expense</h3>
+          <span>$0</span>
+        </div>
+      </section>
+
+      <section>
+        <h3>History</h3>
+        <ul>
+          <li>
+            <span>Salary</span> <span>12,000</span> <button>Delete</button>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Add new transaction</h3>
+        <form>
+          <div>
+            <label for="text">Text:</label>
+            <input
+              type="text"
+              name="text"
+              id="text"
+              placeholder="Add transaction"
+            />
+          </div>
+          <div>
+            <label for="">Amount:</label>
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              placeholder="$0.00"
+            />
+            <span>(Positive - income, Negative - expense)</span>
+          </div>
+          <button>Add transaction</button>
+        </form>
+      </section>
+    </main>
+  </body>
 </html>
