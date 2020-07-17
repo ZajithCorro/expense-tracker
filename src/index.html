@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Expense Tracker</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -13,39 +17,42 @@
     <main>
       <section>
         <h2>YOUR BALANCE</h2>
-        <h2>$12,000</h2>
+        <h2 class="balance positive">$0.00</h2>
       </section>
 
-      <section>
+      <section class="inc-exp">
         <div>
           <h3>Income</h3>
-          <span>$12,000</span>
+          <span>$0.00</span>
         </div>
         <div>
           <h3>Expense</h3>
-          <span>$0</span>
+          <span>$0.00</span>
         </div>
       </section>
 
       <section>
-        <h3>History</h3>
+        <h3 class="title-section">History</h3>
         <ul>
           <li>
-            <span>Salary</span> <span>12,000</span> <button>Delete</button>
+            <span>Salary</span> <span>12,000</span>
+            <button>
+              X
+            </button>
           </li>
         </ul>
       </section>
 
       <section>
-        <h3>Add new transaction</h3>
-        <form>
+        <h3 class="title-section">Add new transaction</h3>
+        <form class="form-new-transaction">
           <div>
-            <label for="text">Text:</label>
+            <label for="text">Transaction:</label>
             <input
               type="text"
-              name="text"
-              id="text"
-              placeholder="Add transaction"
+              name="transaction"
+              id="transaction"
+              placeholder="Groseries"
             />
           </div>
           <div>
@@ -54,7 +61,7 @@
               type="number"
               name="amount"
               id="amount"
-              placeholder="$0.00"
+              placeholder="$12.00"
             />
             <span>(Positive - income, Negative - expense)</span>
           </div>
