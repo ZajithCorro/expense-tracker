@@ -33,43 +33,12 @@
 
       <section>
         <h3 class="title-section">History</h3>
-        <ul class="list-history">
-          <li class="income">
-            <span>Salary</span>
-
-            <div>
-              <span>+ 12,000</span>
-              <button>
-                X
-              </button>
-            </div>
-          </li>
-          <li class="expense">
-            <span>Salary</span>
-
-            <div>
-              <span>- 12,000</span>
-              <button>
-                X
-              </button>
-            </div>
-          </li>
-          <li class="income">
-            <span>Salary</span>
-
-            <div>
-              <span>+ 12,000</span>
-              <button>
-                X
-              </button>
-            </div>
-          </li>
-        </ul>
+        <ul class="list-history"></ul>
       </section>
 
       <section>
         <h3 class="title-section">Add new transaction</h3>
-        <form class="form-new-transaction">
+        <form class="form-new-transaction" autocomplete="off">
           <div>
             <label for="text">Transaction:</label>
             <input
@@ -77,6 +46,7 @@
               name="transaction"
               id="transaction"
               placeholder="Groseries"
+              required
             />
           </div>
           <div>
@@ -86,6 +56,7 @@
               name="amount"
               id="amount"
               placeholder="$12.00"
+              required
             />
             <span>(Positive - income, Negative - expense)</span>
           </div>
