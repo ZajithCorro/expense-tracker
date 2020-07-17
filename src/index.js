@@ -1,3 +1,3 @@
 import './main.scss'
 
-console.log('Hello')
+console.log('Hello from JavaScript')

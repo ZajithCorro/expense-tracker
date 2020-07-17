@@ -1,1 +1,112 @@
+@import './styles/variables';
+@import './styles/reset';
+@import './styles/titles';
 
+body {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  margin-top: 20px;
+}
+
+main {
+  margin: 0 30px;
+  width: 350px;
+}
+
+section {
+  margin: 20px 0 30px;
+}
+
+.balance {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  &.positive {
+    color: var(--positive-color);
+  }
+
+  &.negative {
+    color: var(--negative-color);
+  }
+}
+
+.inc-exp {
+  background-color: #ffff;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-radius: var(--border-radius);
+
+  div {
+    flex: 1;
+    text-align: center;
+
+    h3 {
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    span {
+      display: block;
+      letter-spacing: 1px;
+      margin: 5px 0;
+      font-size: 20px;
+    }
+  }
+
+  div:first-of-type {
+    border-right: 1px solid #dedede;
+
+    span {
+      color: var(--positive-color);
+    }
+  }
+
+  div:last-of-type span {
+    color: var(--negative-color);
+  }
+}
+
+.title-section {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.form-new-transaction {
+  div {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 5px;
+    }
+
+    span {
+      color: #bbb;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    background-color: #204051;
+    box-shadow: var(--shadow);
+    border: none;
+    border-radius: var(--border-radius);
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 0;
+    width: 100%;
+  }
+}
