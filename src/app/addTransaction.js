@@ -2,7 +2,7 @@ import { formatAmount } from './utilities'
 
 const $listTransactions = document.querySelector('.list-history')
 
-export function addTransactionDOM({ uuid, text, amount }) {
+export default function addTransactionDOM({ uuid, text, amount }) {
   const sign = amount < 0 ? '-' : '+'
   const item = document.createElement('li')
 

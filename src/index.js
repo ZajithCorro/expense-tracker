@@ -1,7 +1,8 @@
 import './main.scss'
 
 import { uuid } from './app/utilities'
-import { addTransactionDOM } from './app/addTransaction'
+import addTransactionDOM from './app/addTransaction'
+import updateInfo from './app/updateInfo'
 
 const $formTransaction = document.querySelector('.form-new-transaction')
 const $inputTransaction = document.querySelector('#transaction')
@@ -15,10 +16,11 @@ $formTransaction.addEventListener('submit', () => {
   const newTransaction = {
     uuid: uuid(),
     text: $inputTransaction.value,
-    amount: $inputAmount.value,
+    amount: parseInt($inputAmount.value),
   }
 
   transactions.push(newTransaction)
   addTransactionDOM(newTransaction)
+  updateInfo(transactions)
   $formTransaction.reset()
 })
