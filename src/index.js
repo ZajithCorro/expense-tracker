@@ -7,8 +7,21 @@ import updateInfo from './app/updateInfo'
 const $formTransaction = document.querySelector('.form-new-transaction')
 const $inputTransaction = document.querySelector('#transaction')
 const $inputAmount = document.querySelector('#amount')
+const $listTransactions = document.querySelector('.list-history')
 
 let transactions = []
+
+function handlerDeleteTransaction() {
+  const item = event.target.closest('li')
+  const idItem = item.getAttribute('data-id')
+
+  transactions = transactions.filter(
+    (transaction) => transaction.uuid != idItem
+  )
+
+  $listTransactions.removeChild(item)
+  updateInfo(transactions)
+}
 
 $formTransaction.addEventListener('submit', () => {
   event.preventDefault()
@@ -20,7 +33,7 @@ $formTransaction.addEventListener('submit', () => {
   }
 
   transactions.push(newTransaction)
-  addTransactionDOM(newTransaction)
+  addTransactionDOM(newTransaction, handlerDeleteTransaction)
   updateInfo(transactions)
   $formTransaction.reset()
 })

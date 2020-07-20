@@ -2,7 +2,14 @@ import { formatAmount } from './utilities'
 
 const $listTransactions = document.querySelector('.list-history')
 
-export default function addTransactionDOM({ uuid, text, amount }) {
+function addListeners(callback) {
+  document.querySelectorAll('.btn-delete').forEach((element) => {
+    element.removeEventListener('click', callback)
+    element.addEventListener('click', callback)
+  })
+}
+
+export default function addTransactionDOM({ uuid, text, amount }, callback) {
   const sign = amount < 0 ? '-' : '+'
   const item = document.createElement('li')
 
@@ -13,11 +20,12 @@ export default function addTransactionDOM({ uuid, text, amount }) {
     <span>${text}</span>
     <div>
       <span>${sign} ${formatAmount(amount)}</span>
-      <button>
+      <button class="btn-delete">
         X
       </button>
     </div> 
   `
 
   $listTransactions.appendChild(item)
+  addListeners(callback)
 }
