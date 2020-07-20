@@ -1,4 +1,4 @@
-import { formatAmount } from './utilities'
+import { formatAmount, updateLocalStorage } from './utilities'
 
 const $income = document.querySelector('#income')
 const $expense = document.querySelector('#expense')
@@ -36,4 +36,5 @@ export default function updateInfo(transactions) {
   $income.innerHTML = formatAmount(incomes)
   $expense.innerHTML = formatAmount(expenses)
   updateBalance(total)
+  updateLocalStorage(transactions)
 }

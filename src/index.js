@@ -9,7 +9,7 @@ const $inputTransaction = document.querySelector('#transaction')
 const $inputAmount = document.querySelector('#amount')
 const $listTransactions = document.querySelector('.list-history')
 
-let transactions = []
+let transactions = JSON.parse(localStorage.getItem('transactions')) || []
 
 function handlerDeleteTransaction() {
   const item = event.target.closest('li')
@@ -33,7 +33,15 @@ $formTransaction.addEventListener('submit', () => {
   }
 
   transactions.push(newTransaction)
-  addTransactionDOM(newTransaction, handlerDeleteTransaction)
-  updateInfo(transactions)
+  addTransactionDOM(newTransaction, handlerDeleteTransaction, transactions)
   $formTransaction.reset()
+  $inputTransaction.focus()
 })
+
+function init(transactions) {
+  transactions.map((transaction) =>
+    addTransactionDOM(transaction, handlerDeleteTransaction, transactions)
+  )
+}
+
+init(transactions)

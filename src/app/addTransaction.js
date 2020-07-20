@@ -1,4 +1,5 @@
 import { formatAmount } from './utilities'
+import updateInfo from './updateInfo'
 
 const $listTransactions = document.querySelector('.list-history')
 
@@ -9,7 +10,11 @@ function addListeners(callback) {
   })
 }
 
-export default function addTransactionDOM({ uuid, text, amount }, callback) {
+export default function addTransactionDOM(
+  { uuid, text, amount },
+  callback,
+  transactions
+) {
   const sign = amount < 0 ? '-' : '+'
   const item = document.createElement('li')
 
@@ -28,4 +33,5 @@ export default function addTransactionDOM({ uuid, text, amount }, callback) {
 
   $listTransactions.appendChild(item)
   addListeners(callback)
+  updateInfo(transactions)
 }
